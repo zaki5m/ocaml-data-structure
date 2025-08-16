@@ -1,0 +1,4 @@
+(library
+ (public_name data-structures.algorithms)
+ (name algorithms)
+ (libraries data_structures))

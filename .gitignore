@@ -1,0 +1,40 @@
+# OCaml
+*.cmo
+*.cma
+*.cmi
+*.cmx
+*.cmxa
+*.cmxs
+*.o
+*.a
+*.so
+*.obj
+*.lib
+*.dll
+
+# Dune
+_build/
+*.install
+.merlin
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.idea/
+*.iml
+
+# Temporary files
+*.tmp
+*.bak
+
+# Log files
+*.log
