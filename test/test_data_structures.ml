@@ -12,6 +12,18 @@ let test_stack () =
   assert (Stack.peek stack = 1);
   print_endline "Stack tests passed!"
 
+let test_queue () =
+  let queue = Queue.empty in
+  assert (Queue.is_empty queue);
+  let queue = Queue.push 1 queue in
+  let queue = Queue.push 2 queue in
+  assert (Queue.peek queue = 1);
+  let (value, queue) = Queue.pop queue in
+  assert (value = 1);
+  assert (Queue.peek queue = 2);
+  print_endline "Queue tests passed!"
+
+
 let test_sorting () =
   let unsorted = [3; 1; 4; 1; 5; 9; 2; 6] in
   let expected = [1; 1; 2; 3; 4; 5; 6; 9] in
@@ -21,5 +33,6 @@ let test_sorting () =
 
 let () =
   test_stack ();
+  test_queue ();
   test_sorting ();
   print_endline "All tests passed!"
