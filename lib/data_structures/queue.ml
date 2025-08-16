@@ -1,24 +1,29 @@
-(** simple queue implementation *)
+(** Simple queue implementation *)
 
-type 'a t = 'a list
+type 'a t = { front : 'a list; back : 'a list }
 
-let empty = []
+let empty = { front = []; back = [] }
 
-let is_empty queue = queue = []
+let is_empty queue = ( queue.front = [] && queue.back = [] )
 
-let push x queue = 
-  let rec append_last = function
-    | [] -> [x]
-    | q :: qs -> q :: append_last qs
-  in
-  append_last queue
+let push x queue = { queue with back = x :: queue.back }
 
-let pop = function 
-  | [] -> failwith "Queue is empty"
-  | x :: xs -> (x, xs)
+let normalize queue = 
+  if queue.front = [] then
+    { front = List.rev queue.back; back = [] }
+  else
+    queue
 
-let peek = function
-  | [] -> failwith "Queue is empty"
-  | x :: _ -> x
+let pop queue = 
+  let q = normalize queue in
+  match q.front with
+    | [] -> failwith "Queue is empty"
+    | x :: xs -> (x, { front = xs; back = q.back })
 
-let size queue = List.length queue
+let peek queue = 
+  let q = normalize queue in
+  match q.front with
+    | [] -> failwith "Queue is empty"
+    | x :: _ -> x
+
+let size queue = List.length queue.front + List.length queue.back
