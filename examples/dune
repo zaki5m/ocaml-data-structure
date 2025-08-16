@@ -2,3 +2,8 @@
  (public_name stack_example)
  (name stack_example)
  (libraries data_structures))
+
+(executable
+ (public_name linked_list_example)
+ (name linked_list_example)
+ (libraries data_structures))

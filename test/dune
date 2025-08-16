@@ -1,3 +1,8 @@
 (test
  (name test_data_structures)
  (libraries data_structures algorithms))
+
+(executable
+ (public_name test_linked_list)
+ (name test_linked_list)
+ (libraries data_structures))
