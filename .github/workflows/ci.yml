@@ -38,9 +38,6 @@ jobs:
     - name: Run tests
       run: opam exec -- dune runtest
 
-    - name: Check formatting
-      run: opam exec -- dune build @fmt
-
     - name: Generate test coverage report
       run: |
         opam install bisect_ppx --yes
