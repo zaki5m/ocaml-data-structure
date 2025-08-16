@@ -29,6 +29,14 @@ Please describe the tests that you ran to verify your changes.
 - [ ] Integration tests pass
 - [ ] Manual testing completed
 
+## AI Review
+
+This PR will automatically trigger a GitHub Copilot review focusing on:
+- Data structure implementation correctness
+- Algorithm efficiency and complexity analysis
+- Test coverage and edge cases
+- OCaml best practices and code style
+
 ## Checklist:
 
 - [ ] My code follows the style guidelines of this project
